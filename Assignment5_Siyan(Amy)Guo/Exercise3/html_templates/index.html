@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+
+        <title> Home </title>
+        <style type="text/css">
+
+            input, textarea { 
+                padding: 9px; 
+                border: solid 1px #E5E5E5; 
+                outline: 0; 
+                font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+                width: 200px; 
+                background: #FFFFFF; 
+                } 
+            
+            textarea { 
+                width: 400px; 
+                max-width: 400px; 
+                height: 150px; 
+                line-height: 150%; 
+                } 
+            
+            input:hover, textarea:hover, 
+            input:focus, textarea:focus { 
+                border-color: #C9C9C9; 
+                } 
+            
+            .form label { 
+                margin-left: 10px; 
+                color: #999999; 
+                } 
+            
+            .submit input { 
+                width: auto; 
+                padding: 9px 15px; 
+                background: #617798; 
+                border: 0; 
+                font-size: 14px; 
+                color: #FFFFFF; 
+                }
+
+        </style>
+    </head>
+    <body>
+       
+        Please enter a state here:<br>
+        <form action="/info" method="GET">
+            <br><input type='text' name='state'></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
