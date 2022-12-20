@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    {% extends "base.html" %} 
+    {% block title %}
+    <head>
+        <body>
+            <h1 style="color:darkblue">Data Explorations</h1>
+            <div style="color:darkblue;font-size:10px;text-align: center;"> <i>(Referenced from: <a href="https://www.kaggle.com/datasets/andrewmvd/fetal-health-classification">Kaggle Dataset: Fetal Health Classification</a>)</i></div>
+            <br><br>
+            <p style="color:indianred"><span style="font-size: 28px">Check for missing data:</span>
+                <br><br>
+                <img src="/static/missing_data.jpg" width="800" height="400"/> 
+                <br><br><br>
+                <span style="font-size: 28px">Fetal status distribution:</span>
+                <img src="/static/fetal_health_dist.jpg" width="600" height="400"/> 
+                <br><br><br>
+                <span style="font-size: 28px">Scree Plot:</span>
+                <img src="/static/screeplot.jpg" width="600" height="400"/> 
+                <br><br><br>
+                <span style="font-size: 28px">PCA:</span>
+                <img src="/static/pca.jpg"/> 
+                <br><br><br>
+                <span style="font-size: 28px">Confusion Matrix from Prediction:</span>
+                <img src="/static/cm.jpg" width="800" height="500"> 
+                <br><br><br>
+                <span style="font-size: 28px">Correlation Heatmap:</span>
+                <img src="/static/heatmap.jpg"/> 
+                <br><br><br>
+                <span style="font-size: 28px">scatter plot example(abnormal_short_term_variability vs. percentage_of_time_with_abnormal_long_term_variability):</span>
+                <img src="/static/scatterex.jpg"/> 
+                <br><br><br>
+                <span style="font-size: 28px">histogram examples(for short term):</span>
+                <img src="/static/STabhist1.jpg"/> 
+                <br>
+                <img src="/static/STabhist23.jpg"/> 
+                <br><br><br>
+                <span style="font-size: 28px">histogram examples(for long term):</span>
+                <img src="/static/LTabhist1.jpg"/> 
+                <br>
+                <img src="/static/LTabhist23.jpg"/> 
+                <br><br><br>
+                <span style="font-size: 28px">long-term vs. short-term means</span>
+                <img src="/static/LTV_STV_mean.jpg"/> 
+            
+            
+              </p>
+              <br><br>
+        </body>
+    </head>
+    {% endblock %}
+</html>
+
+
