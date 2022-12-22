@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+    </style>
+
+    <title>Fetal Health Home</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg nvbar-primary bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="home" href="/">Home</a>
+                    <a class="nav-item nav-link" id="explorations" href="/explore">Data explorations</a>
+                    <a class="nav-item nav-link" id="visualizations" href="/visualizations">Data visualizations</a>
+                    <a class="nav-item nav-link" id="predictor" href="/Fetal_Health_Predictor">Fetal Health Predictor</a>
+                </div>
+            </div>
+        </nav>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+  
+      <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+      {% block title %}
+      <br><br><br>
+      <h1 style="color:darkblue">Fetal Health Check!</h1> <br>
+
+      <p style="color:indianred"><span class="bolded">Fetal health is an area that deserves attention because it is something that can be constantly monitored which should be relatively easier and more accessible to manage.</span>
+        <br><br><br>
+        <img src="https://www.mombaby.org/wp-content/uploads/2016/04/ultrasound-cropped-1024x419.jpg" alt="Fetal" width="650" height="400"> 
+        <br><br><br>
+        However, the U.S. fetal mortality rate was <span style="font-size: 26px">5.70 fetal deaths</span> at 20 or more weeks of gestation per 1,000 live births and fetal deaths, and often occurs at low resource setting and most of them can be prevented.<br>
+        Therefore, if the predictability is effective, such model can be put in use in a more accessible way than regular healthcare visit, it could be incorporated into telemedicine in order to provide information and referral on fetal health status with parameter values provided.
+        <br><br><br> <br><br>
+        <span style="font-size: 18px;color:darkblue">credit to BIS 634 Fall2022! Github link: <a href="https://github.com/sgamiye/BIS_634_Siyan_Amy_Guo/tree/main/final_project">link to my github</a></span>
+      
+      </p>
+      <br><br>
+      {% endblock %}
+        </body>
+
+</html>

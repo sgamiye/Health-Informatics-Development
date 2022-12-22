@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    {% extends "base.html" %} 
+    {% block title %}
+    <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+
+        <title> Predictor </title>
+        <style type="text/css">
+
+            input, textarea { 
+                padding: 9px; 
+                border: solid 1px #E5E5E5; 
+                outline: 0; 
+                font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+                width: 200px; 
+                background: #FFFFFF; 
+                } 
+            
+            textarea { 
+                width: 400px; 
+                max-width: 400px; 
+                height: 150px; 
+                line-height: 150%; 
+                } 
+            
+            input:hover, textarea:hover, 
+            input:focus, textarea:focus { 
+                border-color: #C9C9C9; 
+                } 
+            
+            .form label { 
+                margin-left: 10px; 
+                color: #999999; 
+                } 
+            
+            .submit input { 
+                width: auto; 
+                padding: 9px 15px; 
+                background: #617798; 
+                border: 0; 
+                font-size: 14px; 
+                color: #FFFFFF; 
+                }
+            h1 {text-align: center;}
+            p {text-align: center;margin-top: 0; margin-bottom:0;}
+            form {margin: 0 auto; width:190px;}
+            input{text-align: center;}
+            h3 {text-align: center;}
+            h4 {text-align: center;}
+            .hover-1 {
+            --c: #21e285; /* the color */
+            --s: 0.15em;
+            
+            line-height:1.1em;
+            padding-bottom: 10px;
+            text-align: center;
+
+            background: 
+                conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+                left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+                conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+                left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+            transition: .5s;
+            }
+            .hover-1:hover {
+            --_p: 100%;
+            color: var(--c);
+            position:static;
+            margin: auto;
+            text-align:center;
+            }
+            
+           
+
+        </style>
+    </head>
+    <body>
+          
+        <br>
+        <h1 style="color:darkblue">Fetal Health Predictor (with KNN)</h1>
+       
+        <h3 style="color:steelblue"> Please enter the following metrics of the fetal status below for prediction:</h3> <br>
+
+        
+        <form method="get" action="/fetal_status">
+            <br>
+            <h4 class="hover-1"><span title="Please enter Baseline Fetal Heart Rate (FHR) here">Baseline Value</span></h4> 
+            <p>Unit: beats per minute eg.120</p>
+            <input type='number' min="0" name='bv'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of Accelerations per Second here">Accelerations</span></h4> 
+            <p>Unit: number per second eg. 0.002</p>
+                <input type='number' step="0.001" min="0" name='accelerations'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of fetal movements per second here">Fetal Movement</span></h4> 
+            <p>Unit: number per second eg. 0.050</p>
+                <input type='number' step="0.001" min="0" name='fetalmov'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of uterine contractions per second here">Uterine Contractions</span></h4> 
+            <p>Unit: number per second eg. 0.005</p>
+                <input type='number' step="0.001" min="0" name='uterinecont'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of LDs per second here">Light Decelerations</span></h4> 
+            <p>Unit: number per second eg. 0.001</p>
+                <input type='number' step="0.001" min="0" name='LDs'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of SDs per second here">Severe Decelerations</span></h4> 
+            <p>Unit: number per second eg. 0.0</p>
+                <input type='number' step="0.001" min="0" name='SDs'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Number of PDs per second here">Prolonged Decelerations</span></h4> 
+            <p>Unit: number per second eg. 0.002</p>
+                <input type='number' step="0.001" min="0" name='PDs'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Percentage of time with abnormal short term variability here">Abnormal Short Term Variability</span></h4> 
+            <p>Unit: percentage eg. 25.0</p>
+                <input type='number' step="0.001" min="0" name='percentshort'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Mean value of short term variability here">Mean Value of Short Term Variability</span></h4> 
+            <p>Unit: (mean value) eg. 1.5</p>
+                <input type='number' step="0.001" min="0" name='meanshort'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Percentage of time with abnormal long term variability here">Percentage of Time with Abnormal Long Term Variability</span></h4> 
+            <p>Unit: percentage eg. 10.0</p>
+                <input type='number' step="0.001" min="0" name='percentlong'></textarea>
+            <br><br>
+            <h4 class="hover-1"><span title="Please enter Mean value of long term variability here">Mean Value of Long Term Variability</span></h4> 
+            <p>Unit: (mean value) eg. 1.5</p>
+                <input type='number' step="0.001" min="0" name='meanlong'></textarea> 
+                <br><br><br><br>
+                <input type="submit" value="Submit">
+                <br><br><br><br><br><br>
+        </form>
+       
+    </p>
+    </body>
+    {% endblock %}
+</html>
+
