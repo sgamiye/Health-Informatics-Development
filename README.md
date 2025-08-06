@@ -1,4 +1,4 @@
-# Siyan_Amy_Guo repository for Computational Methods for Informatics (BIS634) at Yale
+# Siyan_Amy_Guo repository for Health Informatics Development
 ### Including development code on:
 ##### Data Standard
 ##### Data format
