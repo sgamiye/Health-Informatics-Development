@@ -1,7 +1,5 @@
-# BIS_634_Siyan_Amy_Guo
-Siyan(Amy) Guo's repository for BIS 634
 Exercise 1:
-Function and associated test presented in the Exercise1.ipynb file
+Function and associated test presented in the EDA_MeSHSort.ipynb file
 
 Exercise 2:
 After examining the data:It has columns for name, age, weight, and eyecolor. And it has 152361 rows (people).
